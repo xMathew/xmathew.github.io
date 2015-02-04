@@ -5,3 +5,9 @@ html {
 h1 {
 
 }
+
+div.header {
+	padding-left: 30%;
+	padding-right: 30%;
+	text-align: right;
+}
