@@ -6,8 +6,23 @@ h1 {
 
 }
 
-div.header {
+div {
 	padding-left: 30%;
 	padding-right: 30%;
+}
+
+div.header {
 	text-align: right;
+}
+
+div.navigation {
+
+}
+
+ul.navigation {
+	width: 100%;
+}
+
+ul.navigation li {
+	float: center;
 }
