@@ -7,8 +7,8 @@ h1 {
 }
 
 div {
-	padding-left: 30%;
-	padding-right: 30%;
+	padding-left: 20%;
+	padding-right: 20%;
 }
 
 div.header {
@@ -19,10 +19,48 @@ div.navigation {
 
 }
 
+div.vertline {
+	background: black;
+	height: 100%;
+	width: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
 ul.navigation {
 	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 }
 
 ul.navigation li {
-	float: center;
+	float: left;
+	display: list-item;
+	text-align: center;
+	width: 20%;
+}
+div.navigation a {
+	text-decoration: none;
+	text-align: center;
+	color: black;
+	padding: 4px;
+	width: 100%;
+	display: block;
+}
+
+li.border {
+	border-right: 1px;
+	border-style: solid;
+	border-top: 0px;
+	border-left: 0px;
+	border-bottom: 0px;
+}
+
+li.leftborder {
+	border-right: 0px;
+	border-style: solid;
+	border-top: 0px;
+	border-left: 1px;
+	border-bottom: 0px;
 }
