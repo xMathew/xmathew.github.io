@@ -14,9 +14,40 @@
 		<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="">
 
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+		<script>
+
+			function toAbout() {
+				document.getElementById("about-link").setAttribute("class", "active");
+				document.getElementById("work-link").setAttribute("class", "");
+				document.getElementById("contact-link").setAttribute("class", "");
+				$('#page-contents').load("about.html");
+			}
+
+			function toWork () {
+				document.getElementById("about-link").setAttribute("class", "");
+				document.getElementById("work-link").setAttribute("class", "active");
+				document.getElementById("contact-link").setAttribute("class", "");
+				$('#page-contents').load("work.html");
+			}
+
+			function toContact () {
+				document.getElementById("about-link").setAttribute("class", "");
+				document.getElementById("work-link").setAttribute("class", "");
+				document.getElementById("contact-link").setAttribute("class", "active");
+				$('#page-contents').load("contact.html");
+			}
+
+			function pageLoad () {
+				toAbout();
+			}
+
+		</script>
+
 	</head>
 
-	<body>
+	<body onload='pageLoad()'>
 
 		<div class="header">
 
@@ -28,23 +59,23 @@
 
 			<ul class="navigation">
 
-				<li class="border">
-					<a href="#">About</a>
-				</li>
-
-				<li class="border">
-					<a href="#">My Work</a>
+				<li class="right-border">
+					<a href='#' onclick="toAbout()" id="about-link" class="active">About</a>
 				</li>
 
 				<li>
-					<a href="#">Contact</a>
+					<a href='#' onclick="toWork()" id="work-link" >My Work</a>
+				</li>
+
+				<li class="left-border">
+					<a href='#' onclick="toContact()" id="contact-link" class="">Contact</a>
 				</li>
 
 			</ul>
 
 		</div>
 
-		<div class="content">
+		<div id="page-contents" class="content">
 
 		</div>
 
