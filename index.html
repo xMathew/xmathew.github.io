@@ -10,9 +10,9 @@
 		<meta name="keywords" content="Mathew,Schacher,Games">
 		<meta name="author" content="Mathew Schacher">
 
-		<link rel="stylesheet" type="text/css" href="stylesheet.css">	
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
 		<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-		<link rel="shortcut icon" href="">
+		<link rel="shortcut icon" href="favicon.ico">
 
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
@@ -32,6 +32,27 @@
 				$('#page-contents').load("work.html");
 			}
 
+			function toClass () {
+				document.getElementById("about-link").setAttribute("class", "");
+				document.getElementById("work-link").setAttribute("class", "active");
+				document.getElementById("contact-link").setAttribute("class", "");
+				$('#page-contents').load("classwork.html");
+			}
+
+			function toGame () {
+				document.getElementById("about-link").setAttribute("class", "");
+				document.getElementById("work-link").setAttribute("class", "active");
+				document.getElementById("contact-link").setAttribute("class", "");
+				$('#page-contents').load("videogame.html");
+			}
+
+			function toBoard () {
+				document.getElementById("about-link").setAttribute("class", "");
+				document.getElementById("work-link").setAttribute("class", "active");
+				document.getElementById("contact-link").setAttribute("class", "");
+				$('#page-contents').load("boardgame.html");
+			}
+
 			function toContact () {
 				document.getElementById("about-link").setAttribute("class", "");
 				document.getElementById("work-link").setAttribute("class", "");
@@ -39,9 +60,85 @@
 				$('#page-contents').load("contact.html");
 			}
 
-			function pageLoad () {
-				toAbout();
+			function backButton () {
+				
 			}
+
+			function pageLoad () {
+				var path = window.location.hash.split("/");
+				if(path.length == 0) 
+				{
+					toAbout();
+				}
+				else 
+				{
+					switch(path[path.length - 1])
+					{
+						case "about":
+							toAbout();
+							break;
+						case "work":
+							toWork();
+							break;
+						case "class":
+							toClass();
+							break;
+						case "video":
+							toGame();
+							break;
+						case "board":
+							toBoard();
+							break;
+						case "contact":
+							toContact();
+							break;
+						default:
+							break;
+					}
+
+					var url = "#";
+
+					for(i = 1;i < path.length - 1;i++)
+					{
+						url += "/";
+						url += path[i];
+					}
+
+					var backFunction = "";
+					var linkText = "";
+
+					switch(path[path.length - 2])
+					{
+						case "work":
+							backFunction = "toWork()";
+							linkText = "Back to All Work";
+							break;
+						case "class":
+							backFunction = "toClass()";
+							linkText = "Back to Classwork";
+							break;
+						case "video":
+							backFunction = "toGame()";
+							linkText = "Back to Video Games";
+							break;
+						case "board":
+							backFunction = "toBoard()";
+							linkText = "Back to Board Games";
+							break;
+						default:
+							break;
+					}
+
+					var backLink = "<a href='" + url + "' onclick='' id='back-link' class=''>" + linkText + "</a>";
+
+					document.getElementById('sidebar').innerHTML = backLink;
+
+				}
+			}
+
+			window.addEventListener('popstate', function(e) {
+				pageLoad();
+			});
 
 		</script>
 
@@ -60,18 +157,22 @@
 			<ul class="navigation">
 
 				<li class="right-border">
-					<a href='' onclick="toAbout()" id="about-link" class="active">About</a>
+					<a href='#/about' onclick="" id="about-link" class="active">About</a>
 				</li>
 
 				<li>
-					<a href='#' onclick="toWork()" id="work-link" class="">My Work</a>
+					<a href='#/work' onclick="" id="work-link" class="">My Work</a>
 				</li>
 
 				<li class="left-border">
-					<a href='#' onclick="toContact()" id="contact-link" class="">Contact</a>
+					<a href='#/contact' onclick="" id="contact-link" class="">Contact</a>
 				</li>
 
 			</ul>
+
+		</div>
+
+		<div id="sidebar" class="sidebar">
 
 		</div>
 
