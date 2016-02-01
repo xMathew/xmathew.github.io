@@ -1,5 +1,6 @@
 html {
-	font-family: "Poiret One", Helvetica, sans-serif;
+	/*font-family: "Poiret One", Helvetica, sans-serif;*/
+	font-family: 'Raleway', sans-serif;
 }
 
 h1 {
@@ -30,7 +31,7 @@ div.border {
 
 div.sidebar {
 	position: fixed;
-	top: 15%;
+	top: 115px;
 	width: 15%;
 	padding: 0%;
 	margin-right: 5%;
@@ -49,10 +50,19 @@ div.sidebar a {
 
 div.content {
 	padding-top: 10px;
+	clear: both;
 }
 
 div.page-content {
 	padding: 0%;
+	padding-top: 20px;
+	clear: both;
+}
+
+div.inner-content {
+	padding: 0%;
+	padding-top: 10px;
+	clear: both;
 }
 
 ul.navigation {
@@ -128,13 +138,71 @@ img.circle {
 	border-radius: 50%;
 }
 
+img.right-image {
+	width: 40%;
+	height: 40%;
+	float: right;
+	padding: 5%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+img.left-image {
+	width: 40%;
+	height: 40%;
+	float: left;
+	padding: 5%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
 img.link {
 	opacity: 0.5;
-	transition: opacity .25s;
-	-webkit-transition: opacity .25s;
-	-moz-transition: opacity .25s;
+	transition: opacity .4s;
+	-webkit-transition: opacity .4s;
+	-moz-transition: opacity .4s;
+}
+
+div.large-link {
+	width: 28%;
+	padding: 2.6%;
+	margin: 0%;
+	text-align: center;
+	display: inline-block;
+}
+
+div.large-link img {
+	width: 100%;
+	height: 100%;
+}
+
+div.small-link {
+	width: 20%;
+	height: 200px;
+	padding: 2%;
+	margin: 0px;
+	text-align: center;
+	display: inline-block;
+}
+
+div.small-link img {
+	width: 100%;
+	height: 100%;
+}
+
+div.row-wrapper {
+	text-align: center;
+	padding: 0px;
+}
+
+a.image-link:hover {
+	border: none;
 }
 
 img.link:hover {
 	opacity: 1;
+}
+
+p {
+	text-indent: 20px;
 }

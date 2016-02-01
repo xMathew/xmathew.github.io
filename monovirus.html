@@ -1,0 +1,66 @@
+<div id="class-content" class="content page-content">
+
+	<div class="inner-content">
+	
+		<img src="monovirus.png" class="circle right-image" alt="MonoVirus" />
+
+		<b>Game</b>: MonoVirus
+		<br /><br />
+		<b>Genre</b>: Dungeon Crawler
+		<br /><br />
+		<b>Platform</b>: PC
+		<br /><br />
+		<b>Engine</b>: Microsoft XNA
+		<br /><br />
+		<b>Timeframe</b>: Spring 2014
+		<br /><br />
+		<b>Position</b>: Engineer
+		<br /><br />
+		<b>Class</b>: ITP 380 - Video Game Programming
+		<br /><br /><br />
+	
+	</div>
+
+	<div class="inner-content">
+
+		<p>
+
+			MonoVirus is a procedurally-generated dungeon crawler, where the player takes control of a virus making it's way through a human circulatory system in an attempt to infect them. The player must fight off enemies, level up abilities, and proceed through the dungeon to find and defeat the dungeon boss.
+
+		</p>
+
+		<div align="center">
+
+			
+			
+		</div>
+
+		<hr>
+
+		<p>
+
+			For MonoVirus, I was partnered with Joseph Boman, Cherys Fair, and Zach Vega-Perkins. Due to the small nature of the team, we shared responsibility for the initial design of the game. We wanted to build a dungeon crawler, and settled on a virus theme. My role on the team was to focus on the random dungeon generation, and construction of models to use for dungeon segments.
+
+		</p>
+
+		<p>
+
+			My vision for the random generation was to build a system that would allow for subsequent levels, with the dungeon growing in size to accommodate an increase in difficulty. I also wanted to include branching paths, dead ends, and triggers between dungeon segments that would allow for us to modify the difficulty of the game during playtime based how well the player is doing. For example, if the player takes a longer time to defeat a group of enemies, and takes a lot of damage, spawn fewer enemies later in the dungeon, or spawn weaker enemies. The opposite would be true if the player took little damage or defeated the enemy group quickly.
+
+		</p>
+
+		<p>
+
+			In building the generation, I made use of a 2D array and A*, with a variable start and end location, as well as randomly setting locations in the array to not be usable for the dungeon, so that the dungeon would turn out differently every time. In between each dungeon segment, there were triggers that would allow other game events to occur, such as spawning enemies in subsequent areas or locking the player into the boss room.
+
+		</p>
+
+		<p>
+
+			At the end of the project, we had a randomly generated dungeon with functioning triggers, however due to time constraints we were unable to link the triggers up to enemy spawning and dynamic difficulty levels based on player progression. Additionally, time constraints prevented me from completing implementation of the branching paths and dead ends.
+
+		</p>
+
+	</div>
+
+</div>

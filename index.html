@@ -11,9 +11,10 @@
 		<meta name="author" content="Mathew Schacher">
 
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="/favicon.ico" type="image/x-icon">
-		<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<!-- <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'> -->
+		<link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
 
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
@@ -54,6 +55,27 @@
 				$('#page-contents').load("boardgame.html");
 			}
 
+			function toVanishingPoint () {
+				document.getElementById("about-link").setAttribute("class", "");
+				document.getElementById("work-link").setAttribute("class", "active");
+				document.getElementById("contact-link").setAttribute("class", "");
+				$('#page-contents').load("vanishingpoint.html");
+			}
+
+			function toShattered () {
+				document.getElementById("about-link").setAttribute("class", "");
+				document.getElementById("work-link").setAttribute("class", "active");
+				document.getElementById("contact-link").setAttribute("class", "");
+				$('#page-contents').load("shattered.html");
+			}
+
+			function toWorkPage (page) {
+				document.getElementById("about-link").setAttribute("class", "");
+				document.getElementById("work-link").setAttribute("class", "active");
+				document.getElementById("contact-link").setAttribute("class", "");
+				$('#page-contents').load(page);
+			}
+
 			function toContact () {
 				document.getElementById("about-link").setAttribute("class", "");
 				document.getElementById("work-link").setAttribute("class", "");
@@ -67,6 +89,7 @@
 
 			function pageLoad () {
 				var path = window.location.hash.split("/");
+				window.scrollTo(0,0);
 				if(path.length == 0) 
 				{
 					toAbout();
@@ -79,21 +102,40 @@
 							toAbout();
 							break;
 						case "work":
-							toWork();
+							toWorkPage("work.html");
 							break;
-						case "class":
-							toClass();
+						case "classwork":
+							toWorkPage("classwork.html");
 							break;
-						case "video":
-							toGame();
+						case "videogames":
+							toWorkPage("videogame.html");
 							break;
-						case "board":
-							toBoard();
+						case "boardgames":
+							toWorkPage("boardgame.html");
+							break;
+						case "vanishingpoint":
+							toWorkPage("vanishingpoint.html");
+							break;
+						case "shattered":
+							toWorkPage("shattered.html");
+							break;
+						case "wideawake":
+							toWorkPage("wideawake.html");
+							break;
+						case "monovirus":
+							toWorkPage("monovirus.html");
+							break;
+						case "escpionage":
+							toWorkPage("escpionage.html");
+							break;
+						case "fadetoblack":
+							toWorkPage("fadetoblack.html");
 							break;
 						case "contact":
 							toContact();
 							break;
 						default:
+							toAbout();
 							break;
 					}
 
@@ -118,11 +160,11 @@
 							backFunction = "toClass()";
 							linkText = "Back to Classwork";
 							break;
-						case "video":
+						case "videogames":
 							backFunction = "toGame()";
 							linkText = "Back to Video Games";
 							break;
-						case "board":
+						case "boardgames":
 							backFunction = "toBoard()";
 							linkText = "Back to Board Games";
 							break;
